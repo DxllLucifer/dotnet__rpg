@@ -15,5 +15,9 @@ namespace dotnet__rpg.Models
         public int Intelligence { get; set;} = 10;
         public RpgClass Class { get; set; } = RpgClass.Initiator;
 
+        internal object Select(Func<object, GetCharacterDto> value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
