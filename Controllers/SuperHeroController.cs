@@ -29,5 +29,29 @@ namespace dotnet__rpg.Controllers
             }
             return Ok( response );
         }
+        [HttpPost]
+        public async Task<ActionResult<ServiceResponse<GetCharacterDto>>> CreateHero(AddSuperHeroDto addSuperHero){
+            var response = await _superHeroService.CreateHero(addSuperHero);
+            if(response.Data is null){
+                return NotFound(response);
+            }
+            return Ok( response );
+        }
+        [HttpPut]
+        public async Task<ActionResult<ServiceResponse<GetCharacterDto>>> UpdateSuperHero(AddSuperHeroDto addSuperHero){
+            var response = await _superHeroService.UpdateSuperHero(addSuperHero);
+            if(response.Data is null){
+                return NotFound(response);
+            }
+            return Ok( response );
+        }
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<ServiceResponse<GetCharacterDto>>> DeleteSuperHero(int id){
+            var response = await _superHeroService.DeleteSuperHero(id);
+            if(response.Data is null){
+                return NotFound(response);
+            }
+            return Ok( response );
+        }
     }
 }

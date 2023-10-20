@@ -10,5 +10,8 @@ namespace dotnet__rpg.Services.SuperHeroService
     {
         Task<ServiceResponse<List<GetSuperHeroDto>>> GetAllSuperHeros();
         Task<ServiceResponse<GetSuperHeroDto>> GetSuperHero(int id);
+        Task<ServiceResponse<List<GetSuperHeroDto>>> CreateHero(AddSuperHeroDto addSuperHero);
+        Task<ServiceResponse<GetSuperHeroDto>> UpdateSuperHero(AddSuperHeroDto addSuperHero);
+        Task<ServiceResponse<List<GetSuperHeroDto>>> DeleteSuperHero(int id);
     }
 }
